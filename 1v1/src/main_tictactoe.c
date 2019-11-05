@@ -27,7 +27,9 @@ static int help(void)
         "\n\t0\tif the game ended with a draw or the game was quit (CTRL+D),\n"
         "\t1\tif the game ended and Player 1 won,\n\t2\tif the game ended and "
         "Player 2 won,\n\t84\tif the program ended with an error.\n\n \033[1m"
-        "AUTHOR\033[0m\n\tWritten by Quentin di Meo.\n\n");
+        "AUTHOR\033[0m\n\tWritten by Quentin di Meo.\n\n \033[1mREPORTING BUGS"
+        "\033[0m\n\tReport any bug or functioning error to <quentin.di-meo@epi"
+        "tech.eu>\n\n");
     return (SUCCESS);
 }
 

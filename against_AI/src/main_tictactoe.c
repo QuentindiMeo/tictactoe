@@ -24,7 +24,9 @@ static int help(void)
         "\033[0m\n\t0\tif the game ended with a draw or the game was quit ("
         "CTRL+D),\n\t1\tif the game ended and the player won,\n\t2\tif the "
         "game ended and the AI won,\n\t84\tif the program ended with an error."
-        "\n\n \033[1mAUTHOR\033[0m\n\tWritten by Quentin di Meo.\n\n");
+        "\n\n \033[1mAUTHOR\033[0m\n\tWritten by Quentin di Meo.\n\n \033[1mRE"
+        "PORTING BUGS\033[0m\n\tReport any bug or functioning error to <quenti"
+        "n.di-meo@epitech.eu>\n\n");
     return (SUCCESS);
 }
 
