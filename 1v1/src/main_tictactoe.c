@@ -22,7 +22,7 @@ static int help(void)
         "\033[4mPIECE\033[0m\n\t\tChange the players' pieces. \033[4mPIECE"
         "\033[0m  has  to  be  a  printable\n\t\tcharacter and it can't be a s"
         "pace (' ').\n\n\t\033[1m--names\033[0m\n\t\tMake the program ask for "
-        "two names to use as player names.\n\n\t\033[1m-h\033[0m,\033[1m--"
+        "two names to use as player names.\n\n\t\033[1m-h\033[0m, \033[1m--"
         "help\033[0m\n\t\tDisplay this help.\n\n   \033[1mExit status:\033[0m"
         "\n\t0\tif the game ended with a draw or the game was quit (CTRL+D),\n"
         "\t1\tif the game ended and Player 1 won,\n\t2\tif the game ended and "
@@ -63,12 +63,10 @@ static int main_tictactoe(int ac, char **av, data *game)
 
     setup(&game);
     ret_v = get_parameters(ac, av, game);
-    if (ret_v == FAILURE)
-        return ((freer(game)) ? FAILURE : FAILURE);
+    if (ret_v == FAILURE || ret_v == END_OF_FILE2)
+        return (FAILURE);
     if (ret_v == END_OF_FILE)
         return ((freer(game)) ? END_OF_FILE : END_OF_FILE);
-    if (ret_v == END_OF_FILE2)
-        return (END_OF_FILE2);
     initial_print(game);
     for (int i = 0; i < HEIGHT_BOARD; i++)
         my_putstr(game->board[i]);
