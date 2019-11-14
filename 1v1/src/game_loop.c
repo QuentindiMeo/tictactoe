@@ -52,7 +52,7 @@ static int get_y(data **game)
     size_t buff = 0;
     int ret_v;
 
-    (*game)->played_y = (my_putstr("Row: ")) ? 0 : 0;
+    (*game)->played_y = (my_putstr("Column: ")) ? 0 : 0;
     while (!(*game)->played_y) {
         ret_v = getline(&entry, &buff, stdin);
         if (ret_v == ERROR)

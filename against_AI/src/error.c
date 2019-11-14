@@ -11,7 +11,10 @@
 
 int err_out_of_range(int id)
 {
-    my_putstr("Error: this line is invalid or out of range\n");
+    if (!id)
+        my_putstr("Error: this line is invalid or out of range\n");
+    else
+        my_putstr("Error: this column is invalid or out of range\n");
     if (!id)
         my_putstr("Line: ");
     return (YES);
