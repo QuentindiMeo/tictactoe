@@ -26,13 +26,11 @@ static int get_x(data **game)
 {
     char *entry = NULL;
     size_t buff = 0;
-    int ret_v;
 
     (*game)->played_x = 0;
     my_putstr("Line: ");
     while (!(*game)->played_x) {
-        ret_v = getline(&entry, &buff, stdin);
-        if (ret_v == ERROR)
+        if (getline(&entry, &buff, stdin) == ERROR)
             return (quit(entry));
         (*game)->played_x = my_getnbr(entry);
         if ((*game)->played_x != 1 &&
@@ -48,12 +46,10 @@ static int get_y(data **game)
 {
     char *entry = NULL;
     size_t buff = 0;
-    int ret_v;
 
     (*game)->played_y = (my_putstr("Column: ")) ? 0 : 0;
     while (!(*game)->played_y) {
-        ret_v = getline(&entry, &buff, stdin);
-        if (ret_v == ERROR)
+        if (getline(&entry, &buff, stdin) == ERROR)
             return (quit(entry));
         (*game)->played_y = my_getnbr(entry);
         if ((*game)->played_y != 1 && (*game)->played_y != 2 &&
